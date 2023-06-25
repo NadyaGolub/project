@@ -1,16 +1,11 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+
+// import { useTranslation } from 'react-i18next';
+
+// function App() {
+//   const { t } = useTranslation();
+
+//   return <h2>{t('Welcome to React')}</h2>;
+// };
+
+// export default App;
+
