@@ -7,7 +7,9 @@ import { initReactI18next, useTranslation } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import './index.css';
-
+import LanguageFlags from 'components/LanguageFlags';
+import en from './locales/en/translation.json';
+import fr from './locales/fr/translation.json';
 
 
 
@@ -22,11 +24,17 @@ i18next
       order: [ 'cookie', 'htmlTag', 'localStorage', 'path', 'subdomain'],
       caches: ['cookie'],
     },
-    backend: {
-      loadPath: '/assets/locales/{{lng}}/translation.json',
+    resources: {
+      en: {
+        translation: en,
+      },
+      fr: {
+        translation: fr,
+      },
     },
   })
 
+  
 function App() {
   const { t } = useTranslation()
 
@@ -39,9 +47,10 @@ function App() {
 ReactDOM.createRoot(document.getElementById('root')).render(
  
   <React.StrictMode>
-    <React.Suspense fallback="loading">
+    
+      <LanguageFlags/>
       <App />
-      </React.Suspense>
+     
     </React.StrictMode>
    
 );
